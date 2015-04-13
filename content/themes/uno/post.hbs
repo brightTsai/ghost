@@ -1,0 +1,36 @@
+{{!< default}}
+
+{{#post}}
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="{{date format="DD MMM YYYY"}}" class="post-meta__date date">{{date format="DD MMM YYYY"}}</time> &#8226; <span class="post-meta__tags tags">{{tags prefix="on "}}</span>
+        <span class="post-meta__author author"> by {{author.name}}</span> </div>
+      <h1 class="post-title">{{{title}}}</h1>
+    </header>
+
+    <section class="{{post_class}}">
+      {{content}}
+    </section>
+ <section class="post-comments">
+        <div class="ds-thread" data-thread-key="{{slug}}" data-title="{{{title}}}" data-url="{{url absolute="true"}}"></div>
+    </section>
+
+  </article>
+
+  {{!-- {{> comments}} --}}
+
+{{/post}}
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ggjun"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
